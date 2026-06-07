@@ -1,0 +1,156 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #4f46e5,
+        #7c3aed,
+        #ec4899
+    );
+
+    background-size: 300% 300%;
+    animation: gradientAnimation 12s ease infinite;
+    padding: 20px;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.quote-box {
+    width: 100%;
+    max-width: 650px;
+
+    padding: 40px;
+    border-radius: 25px;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.25),
+        inset 0 0 10px rgba(255, 255, 255, 0.1);
+
+    text-align: center;
+
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.quote-box h1 {
+    color: white;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+#quote {
+    color: white;
+    font-size: 1.6rem;
+    line-height: 1.8;
+    font-weight: 400;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+#quote::before {
+    content: "❝";
+    font-size: 3rem;
+    color: rgba(255,255,255,0.6);
+    display: block;
+    margin-bottom: 10px;
+}
+
+#author {
+    color: rgba(255,255,255,0.85);
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 35px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+#new-quote-btn {
+    border: none;
+    outline: none;
+
+    padding: 14px 35px;
+    border-radius: 50px;
+
+    background: white;
+    color: #6d28d9;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+#new-quote-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+#new-quote-btn:active {
+    transform: scale(0.96);
+}
+
+@media (max-width: 600px) {
+    .quote-box {
+        padding: 30px 20px;
+    }
+
+    #quote {
+        font-size: 1.3rem;
+
+    }
+
+    #author {
+        font-size: 1rem;
+    }
+
+    #new-quote-btn {
+        width: 100%;
+    }
+}
